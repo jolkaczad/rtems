@@ -1,1 +1,7 @@
 pok-20120509.tgz
+
+*.a
+*.o
+*.lo
+*.ralf
+*.bin

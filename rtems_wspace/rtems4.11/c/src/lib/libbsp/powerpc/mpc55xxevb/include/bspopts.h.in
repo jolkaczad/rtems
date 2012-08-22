@@ -33,6 +33,9 @@
 /* if defined, use custom settings for MPC5674FEVB board */
 #undef MPC55XX_BOARD_MPC5674FEVB
 
+/* if defined, use custom settings for ECU508 board */
+#undef MPC55XX_BOARD_MPC5674F_ECU508
+
 /* if defined, use custom settings for phyCORE MPC5554 board */
 #undef MPC55XX_BOARD_PHYCORE_MPC5554
 
@@ -51,14 +54,14 @@
    channel) */
 #undef MPC55XX_CLOCK_PIT_CHANNEL
 
+/* determines which serial device will be registered as /dev/console */
+#undef MPC55XX_CONSOLE_MINOR
+
 /* size of the early initialization stack in bytes */
 #undef MPC55XX_EARLY_STACK_SIZE
 
 /* Must be defined to set the EMIOS prescaler */
 #undef MPC55XX_EMIOS_PRESCALER
-
-/* determines which eSCI device will be registered as /dev/console */
-#undef MPC55XX_ESCI_CONSOLE_MINOR
 
 /* define to zero or one to disable or enable interrupts for the eSCI devices
    */
@@ -73,9 +76,18 @@
 /* Must be defined to be the PLL predivider factor for clock generation */
 #undef MPC55XX_FMPLL_PREDIV
 
+/* if defined, do low level initialization */
+#undef MPC55XX_NEEDS_LOW_LEVEL_INIT
+
+/* enable NULL pointer protection */
+#undef MPC55XX_NULL_POINTER_PROTECTION
+
 /* Must be defined to be the external reference clock (in Hz) for clock
    generation */
 #undef MPC55XX_REFERENCE_CLOCK
+
+/* system clock divider */
+#undef MPC55XX_SYSTEM_CLOCK_DIVIDER
 
 /* Define to the address where bug reports for this package should be sent. */
 #undef PACKAGE_BUGREPORT
@@ -104,8 +116,20 @@
 /* If defined the SMC91111 chip has the ethernet address loaded at reset. */
 #undef SMC91111_ENADDR_IS_SETUP
 
+/* enable big endian support for SMSC9218I network interface */
+#undef SMSC9218I_BIG_ENDIAN_SUPPORT
+
 /* receive eDMA channel for SMSC9218I network interface */
 #undef SMSC9218I_EDMA_RX_CHANNEL
 
 /* transmit eDMA channel for SMSC9218I network interface */
 #undef SMSC9218I_EDMA_TX_CHANNEL
+
+/* enable LED outputs for SMSC9218I network interface */
+#undef SMSC9218I_ENABLE_LED_OUTPUTS
+
+/* IRQ pin for SMSC9218I network interface */
+#undef SMSC9218I_IRQ_PIN
+
+/* reset pin for SMSC9218I network interface */
+#undef SMSC9218I_RESET_PIN

@@ -4,12 +4,6 @@
 #   2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
 #   2011, 2012 Free Software Foundation, Inc.
 
-<<<<<<< HEAD
-timestamp='2012-04-18'
-=======
-timestamp='2012-01-01'
->>>>>>> 0e0096c... applying a patch of compiled changes for the project
-
 # This file is (in principle) common to ALL GNU software.
 # The presence of a machine in this file suggests that SOME GNU software
 # can handle that machine.  It does not imply ALL GNU software can.

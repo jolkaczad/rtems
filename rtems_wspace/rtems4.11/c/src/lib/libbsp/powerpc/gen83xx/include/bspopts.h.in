@@ -33,6 +33,9 @@
 /* if defined, enables U-Boot support */
 #undef HAS_UBOOT
 
+/* if defined, then use settings for the BR UID board */
+#undef MPC83XX_BOARD_BR_UID
+
 /* if defined, then use settings for the HSC_CM01 board */
 #undef MPC83XX_BOARD_HSC_CM01
 
