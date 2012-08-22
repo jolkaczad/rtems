@@ -1,0 +1,282 @@
+Archive member included because of file (symbol)
+
+/home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+                              main.o (pok_do_syscall)
+/home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+                              main.o (pok_thread_attr_init)
+/home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+                              main.o (printf)
+
+Allocating common symbols
+Common symbol       size              file
+
+errno               0x4               /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+pok_threads         0x8               main.o
+ticks               0x4               ../../../hello1.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000000000000                . = 0x0
+                0x0000000000000000                __partition_begin = .
+
+.text           0x0000000000000000      0x944
+ *(.text)
+ .text          0x0000000000000000      0x109 main.o
+                0x0000000000000000                main
+ *fill*         0x0000000000000109        0x7 00
+ .text          0x0000000000000110       0x24 activity.o
+                0x0000000000000110                thr1_job
+ .text          0x0000000000000134       0x1a subprograms.o
+                0x0000000000000134                test__hello_part1
+ *fill*         0x000000000000014e        0x2 00
+ .text          0x0000000000000150        0x0 gtypes.o
+ .text          0x0000000000000150       0x21 ../../../threadstart.o
+                0x0000000000000150                user_thread_starting
+ *fill*         0x0000000000000171        0x3 00
+ .text          0x0000000000000174      0x16a ../../../hello1.o
+                0x0000000000000174                tick_notify
+                0x000000000000018c                user_hello_part1
+ *fill*         0x00000000000002de        0x2 00
+ .text          0x00000000000002e0       0x13 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+                0x00000000000002e0                pok_do_syscall
+ *fill*         0x00000000000002f3        0x1 00
+ .text          0x00000000000002f4      0x160 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+                0x00000000000002f4                __pok_partition_start
+                0x0000000000000314                pok_thread_create
+                0x0000000000000364                pok_thread_attr_init
+                0x00000000000003b0                pok_thread_period
+                0x0000000000000404                pok_thread_status
+ .text          0x0000000000000454      0x4f0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+                0x0000000000000773                vprintf
+                0x00000000000008ef                printf
+                0x0000000000000918                memcpy
+
+.iplt           0x0000000000000944        0x0
+ .iplt          0x0000000000000000        0x0 main.o
+
+.rodata         0x0000000000000960       0x7d
+ *(.rodata)
+ .rodata        0x0000000000000960       0x7d /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.rodata.str1.1  0x00000000000009dd       0x5a
+ .rodata.str1.1
+                0x00000000000009dd        0x7 main.o
+ .rodata.str1.1
+                0x00000000000009e4        0xe ../../../threadstart.o
+ .rodata.str1.1
+                0x00000000000009f2       0x45 ../../../hello1.o
+
+.rodata.str1.4  0x0000000000000a38       0x5c
+ .rodata.str1.4
+                0x0000000000000a38       0x2c main.o
+ .rodata.str1.4
+                0x0000000000000a64       0x30 ../../../hello1.o
+                                         0x2e (size before relaxing)
+
+.rel.dyn        0x0000000000000a94        0x0
+ .rel.iplt      0x0000000000000000        0x0 main.o
+ .rel.text      0x0000000000000000        0x0 main.o
+
+.data           0x0000000000000aa0       0xb4
+ *(.data)
+ .data          0x0000000000000aa0        0x0 main.o
+ .data          0x0000000000000aa0        0x0 activity.o
+ .data          0x0000000000000aa0        0x0 subprograms.o
+ .data          0x0000000000000aa0        0x0 gtypes.o
+ .data          0x0000000000000aa0        0x0 ../../../threadstart.o
+ .data          0x0000000000000aa0        0x0 ../../../hello1.o
+ .data          0x0000000000000aa0        0x0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .data          0x0000000000000aa0        0x0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ .data          0x0000000000000aa0        0x0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+ *(.bss)
+ .bss           0x0000000000000aa0        0x0 main.o
+ .bss           0x0000000000000aa0        0x0 activity.o
+ .bss           0x0000000000000aa0        0x0 subprograms.o
+ .bss           0x0000000000000aa0        0x0 gtypes.o
+ .bss           0x0000000000000aa0        0x0 ../../../threadstart.o
+ .bss           0x0000000000000aa0        0x8 ../../../hello1.o
+                0x0000000000000aa0                _notify
+                0x0000000000000aa4                _ds_mem
+ .bss           0x0000000000000aa8        0x0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .bss           0x0000000000000aa8        0x0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ *fill*         0x0000000000000aa8       0x18 00
+ .bss           0x0000000000000ac0       0x84 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+ *(COMMON)
+ COMMON         0x0000000000000b44        0x8 main.o
+                0x0000000000000b44                pok_threads
+ COMMON         0x0000000000000b4c        0x4 ../../../hello1.o
+                0x0000000000000b4c                ticks
+ COMMON         0x0000000000000b50        0x4 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+                0x0000000000000b50                errno
+                0x0000000000000b54                __partition_end = .
+LOAD main.o
+LOAD activity.o
+LOAD subprograms.o
+LOAD gtypes.o
+LOAD ../../../threadstart.o
+LOAD ../../../hello1.o
+LOAD /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a
+OUTPUT(part1.elf elf32-i386)
+
+.igot.plt       0x0000000000000b54        0x0
+ .igot.plt      0x0000000000000000        0x0 main.o
+
+.debug_abbrev   0x0000000000000000      0xb2e
+ .debug_abbrev  0x0000000000000000       0xd9 main.o
+ .debug_abbrev  0x00000000000000d9       0x8c activity.o
+ .debug_abbrev  0x0000000000000165       0x27 subprograms.o
+ .debug_abbrev  0x000000000000018c        0x1 gtypes.o
+ .debug_abbrev  0x000000000000018d       0x32 ../../../threadstart.o
+ .debug_abbrev  0x00000000000001bf       0xfc ../../../hello1.o
+ .debug_abbrev  0x00000000000002bb       0xbb /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .debug_abbrev  0x0000000000000376      0x339 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ .debug_abbrev  0x00000000000006af      0x47f /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.debug_info     0x0000000000000000     0x2210
+ .debug_info    0x0000000000000000      0x378 main.o
+ .debug_info    0x0000000000000378      0x179 activity.o
+ .debug_info    0x00000000000004f1       0x38 subprograms.o
+ .debug_info    0x0000000000000529        0x0 gtypes.o
+ .debug_info    0x0000000000000529       0x3f ../../../threadstart.o
+ .debug_info    0x0000000000000568      0x27a ../../../hello1.o
+ .debug_info    0x00000000000007e2      0x2ce /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .debug_info    0x0000000000000ab0      0xc07 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ .debug_info    0x00000000000016b7      0xb59 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.debug_line     0x0000000000000000      0x9d8
+ .debug_line    0x0000000000000000      0x156 main.o
+ .debug_line    0x0000000000000156       0x88 activity.o
+ .debug_line    0x00000000000001de       0x40 subprograms.o
+ .debug_line    0x000000000000021e        0x0 gtypes.o
+ .debug_line    0x000000000000021e       0x49 ../../../threadstart.o
+ .debug_line    0x0000000000000267      0x107 ../../../hello1.o
+ .debug_line    0x000000000000036e       0xb9 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .debug_line    0x0000000000000427      0x37d /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ .debug_line    0x00000000000007a4      0x234 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.debug_loc      0x0000000000000000      0x523
+ .debug_loc     0x0000000000000000       0x1e main.o
+ .debug_loc     0x000000000000001e      0x505 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.debug_pubnames
+                0x0000000000000000      0x24c
+ .debug_pubnames
+                0x0000000000000000       0x2b main.o
+ .debug_pubnames
+                0x000000000000002b       0x1f activity.o
+ .debug_pubnames
+                0x000000000000004a       0x28 subprograms.o
+ .debug_pubnames
+                0x0000000000000072       0x2b ../../../threadstart.o
+ .debug_pubnames
+                0x000000000000009d       0x59 ../../../hello1.o
+ .debug_pubnames
+                0x00000000000000f6       0x25 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .debug_pubnames
+                0x000000000000011b       0xeb /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ .debug_pubnames
+                0x0000000000000206       0x46 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.debug_pubtypes
+                0x0000000000000000      0x43c
+ .debug_pubtypes
+                0x0000000000000000       0x73 main.o
+ .debug_pubtypes
+                0x0000000000000073       0x20 activity.o
+ .debug_pubtypes
+                0x0000000000000093       0x12 ../../../threadstart.o
+ .debug_pubtypes
+                0x00000000000000a5       0x36 ../../../hello1.o
+ .debug_pubtypes
+                0x00000000000000db       0x59 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .debug_pubtypes
+                0x0000000000000134      0x1c9 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ .debug_pubtypes
+                0x00000000000002fd      0x13f /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.debug_aranges  0x0000000000000000      0x1a0
+ .debug_aranges
+                0x0000000000000000       0x20 main.o
+ .debug_aranges
+                0x0000000000000020       0x20 activity.o
+ .debug_aranges
+                0x0000000000000040       0x20 subprograms.o
+ .debug_aranges
+                0x0000000000000060       0x20 ../../../threadstart.o
+ .debug_aranges
+                0x0000000000000080       0x20 ../../../hello1.o
+ .debug_aranges
+                0x00000000000000a0       0x20 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .debug_aranges
+                0x00000000000000c0       0xa0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ .debug_aranges
+                0x0000000000000160       0x40 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.debug_str      0x0000000000000000      0xbdb
+ .debug_str     0x0000000000000000      0x77b main.o
+                                        0x7af (size before relaxing)
+ .debug_str     0x000000000000077b       0x29 activity.o
+                                        0x374 (size before relaxing)
+ .debug_str     0x00000000000007a4       0x20 subprograms.o
+                                         0x9c (size before relaxing)
+ .debug_str     0x00000000000007c4       0x17 ../../../threadstart.o
+                                         0xad (size before relaxing)
+ .debug_str     0x00000000000007db       0x51 ../../../hello1.o
+                                        0x492 (size before relaxing)
+ .debug_str     0x000000000000082c       0x7f /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+                                        0x6b8 (size before relaxing)
+ .debug_str     0x00000000000008ab       0xff /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+                                       0x1b01 (size before relaxing)
+ .debug_str     0x00000000000009aa      0x231 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+                                        0xcad (size before relaxing)
+
+.comment        0x0000000000000000       0x2c
+ .comment       0x0000000000000000       0x2c main.o
+                                         0x2d (size before relaxing)
+ .comment       0x0000000000000000       0x2d activity.o
+ .comment       0x0000000000000000       0x2d subprograms.o
+ .comment       0x0000000000000000       0x2d gtypes.o
+ .comment       0x0000000000000000       0x2d ../../../threadstart.o
+ .comment       0x0000000000000000       0x2d ../../../hello1.o
+ .comment       0x0000000000000000       0xb4 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .comment       0x0000000000000000      0x5a0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ .comment       0x0000000000000000      0x276 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.note.GNU-stack
+                0x0000000000000000        0x0
+ .note.GNU-stack
+                0x0000000000000000        0x0 main.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 activity.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 subprograms.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 gtypes.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ../../../threadstart.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 ../../../hello1.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.debug_frame    0x0000000000000000      0x42c
+ .debug_frame   0x0000000000000000       0x34 main.o
+ .debug_frame   0x0000000000000034       0x2c activity.o
+ .debug_frame   0x0000000000000060       0x34 subprograms.o
+ .debug_frame   0x0000000000000094       0x34 ../../../threadstart.o
+ .debug_frame   0x00000000000000c8       0x54 ../../../hello1.o
+ .debug_frame   0x000000000000011c       0x38 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(arch.lo)
+ .debug_frame   0x0000000000000154      0x104 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(core.lo)
+ .debug_frame   0x0000000000000258      0x1d4 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)
+
+.debug_ranges   0x0000000000000000       0x30
+ .debug_ranges  0x0000000000000000       0x30 /home/rtems/rtems_hyper/pok_wspace/pok-20120509/libpok/libpok.a(libc.lo)

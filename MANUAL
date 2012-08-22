@@ -1,0 +1,87 @@
+* MANUAL
+*
+* Created by Wiktor Langowski <jolkaczad[*]gmail.com>
+*
+* 2012-08-20, Wiktor Langowski; initial
+
+
+PREREQUISITES
+
+It's assumed the user has already installed the software packages required by
+both POK and RTEMS on a Linux system for the i386 architecture. This example 
+was prepared on a Centos 6 VirtualBox available from the RTEMS website.
+
+
+ENVIRONMENT VARIABLES
+
+RTEMS_WSPACE_PATH path to the 'rtems_wspace' directory
+POK_PATH path to the main POK directory inside pok_root
+POK_WSPACE_PATH 'pok_wspace' directory
+
+to set these up, SETENV_HYPER can be sourced from inside the rtems-hyper
+directory
+$ source SETENV_HYPER
+
+
+INSTRUCTIONS
+
+1. run ./bootstrap inside the $RTEMS_WSPACE_PATH/rtems4.11 directory
+$ cd $RTEMS_WSPACE_PATH/rtems4.11
+$ ./bootstrap
+
+2. b-pok will be the build directory, the configuration script will be
+invoked from inside.
+$ cd ../b-pok
+$ ../rtems4.11/configure --target=i386-rtems4.11 --disable-cxx \
+--disable-networking --disable-posix --enable-rtemsbsp=pok --disable-tests \
+--prefix=$RTEMS_WSPACE_PATH/b-pok/install ENABLE_HYPERVISOR=1
+
+3. build and install
+$ make && make install
+
+4. configure and compile POK
+$ cd $POK_PATH
+$ make configure
+
+5. compile the example on POK part producing libpok.a which will be linked
+against
+$ cd $POK_WSPACE_PATH/partitions-threads_rtems
+$ make
+
+6. if not done before, set the makefile path variable required to compile the
+example on RTEMS
+$ export RTEMS_MAKEFILE_PATH=$RTEMS_WSPACE_PATH/b-pok/install/i386-rtems4.11/pok
+
+7. compile the example. The compilation will break during linking
+with "undefined reference to `pok_do_syscall'" because the original Makefile
+doesn't link against libpok.a; it will produce the required test.o file though
+$ cd $RTEMS_WSPACE_PATH/hello_world_c
+$ make
+
+8. complete linking the hello.ralf file using a custom collect2 script;
+some paths for libraries and executables are unfortunately hardcoded, 
+may require tuning
+$ ./collect_script.sh
+
+9. copy the rtems image into the POK directory so that it can be included in a
+partition
+$ ./copyelf.sh
+
+10. substiute the original executable created by the standard example
+compilation process with an image containing a real POK "hello world partition"
+and a RTEMS partition using a dedicated script emulating the work of a Makefile
+$ cd $POK_WSPACE_PATH/partitions-threads_rtems
+$ ./call_pokrtems_combine.sh
+
+11. verify the process by running the compiled elf file inside QEMU; expected
+output is one partition printing some debug initialization information messages
+first, and later messages from the running application like this:
+
+*** HELLO WORLD TEST ***
+Hello World
+*** End OF HELLO WORLD TEST ***
+while(1);
+
+Right now, the other partition's output consists of a hello world message and
+some memory information.
+$ make run
